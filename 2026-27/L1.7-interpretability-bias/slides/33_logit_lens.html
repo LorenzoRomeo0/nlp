@@ -1,0 +1,37 @@
+<section class="s-meth s-fm">
+  <div class="slide-head">
+    <div class="kicker">Looking for the why · 4 Logit lens</div>
+  </div>
+  <div class="slide-body">
+    <p class="mt-statement">The logit lens asks what each layer would predict.</p>
+
+    <div class="fm-grid">
+      <div class="fm-intu">
+        <div class="lbl">The intuition</div>
+        <p>Every layer adds its contribution to the residual stream, and only the last one is turned into words. We apply the same final map to the middle of the stream and read what the model “has in mind” so far.</p>
+        <p class="sym"><span class="tex">W_U</span>: the unembedding matrix, from <span class="tex">d</span> numbers to one score per word of the vocabulary. <span class="tex">\mathrm{LN}</span>: the final normalisation. See the residual stream in L1.1.</p>
+      </div>
+
+      <div class="fm-cards">
+        <div class="fm-card fragment" data-fragment-index="0">
+          <p class="h">The residual stream</p>
+          <div class="tex block">h^{(\ell)} = h^{(\ell-1)} + \mathrm{Attn}^{(\ell)} + \mathrm{MLP}^{(\ell)}</div>
+          <p class="d">Each block writes an update into the same vector.</p>
+        </div>
+        <div class="fm-card fragment" data-fragment-index="1">
+          <p class="h">Reading it at layer ℓ</p>
+          <div class="tex block">p^{(\ell)}(w) = \operatorname{softmax}\!\big(W_U\,\mathrm{LN}(h^{(\ell)})\big)_w</div>
+          <p class="d">The rank and the probability of “keep” or “let” across layers show when the answer emerges.</p>
+        </div>
+        <div class="fm-card fragment" data-fragment-index="2">
+          <p class="h">Direct logit attribution</p>
+          <div class="tex block">\mathrm{logit}(w) \approx \sum_{c} u_w \cdot o_c</div>
+          <p class="d"><span class="tex">u_w</span>: the column of <span class="tex">W_U</span> for word <span class="tex">w</span>; <span class="tex">o_c</span>: what component <span class="tex">c</span> (a head or an MLP) writes, with the normalisation frozen. Which components push the answer?</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-limit fragment" data-fragment-index="3"><b>Early layers speak another basis</b> the raw lens can mislead there; a tuned lens learns a small affine map for each layer. Still a reading, not a proof: confirm with interventions.</div>
+  </div>
+  <p class="foot">Logit lens: nostalgebraist (2020); tuned lens: Belrose et al. (2023).</p>
+</section>

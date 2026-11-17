@@ -1,0 +1,31 @@
+<section class="s-lim">
+  <div class="slide-head">
+    <div class="kicker">Looking for the why · What we can and cannot say</div>
+  </div>
+  <div class="slide-body">
+    <p class="lm-statement">What looking inside can and cannot tell us.</p>
+
+    <div class="lm-head"><span></span><span>What we saw in our stories</span><span>What it does not tell us</span></div>
+
+    <div class="lm-row fragment" data-fragment-index="0">
+      <div class="m">Attribution</div>
+      <div class="s">The decision to stay silent rests on what the text says about the friend’s happiness, not on the country: removing every Moroccan marker, or changing the country in the prompt, barely moves the odds.</div>
+      <div class="c">Why the model “chooses”. It shows what this output depends on, in this text. Our gradient variants failed their own check and are not shown.</div>
+    </div>
+
+    <div class="lm-row fragment" data-fragment-index="1">
+      <div class="m">Probing</div>
+      <div class="s">The decision becomes readable only as the story approaches it. Only near the end do the activations beat a word counter, and by a little.</div>
+      <div class="c">That the model uses what a probe reads, or that it “already knew”. Decodable is not used.</div>
+    </div>
+
+    <div class="lm-row fragment" data-fragment-index="2">
+      <div class="m">Interventions</div>
+      <div class="s">A direction found in our own stories turns the decision from about 94% silence to about 97% telling with a push of four units, and the stated reasons follow.</div>
+      <div class="c">That it is “the” place of the decision, or a moral signal. The same push changes the protagonist’s gender, the reasons and the length of the story; other directions move it too, less. A handle, not a map.</div>
+    </div>
+
+    <p class="lm-close fragment" data-fragment-index="3">Looking inside gives us more to argue with, not a verdict on a model’s morality.</p>
+  </div>
+  <p class="foot">Qwen2.5-32B-Instruct, one dilemma, one language-model judge. Interventions: layer 36, four prompts, about 100 stories per setting; “about 94% silence” and “about 97% telling” are the averages at α = −4 and α = +4 over the four prompts.</p>
+</section>

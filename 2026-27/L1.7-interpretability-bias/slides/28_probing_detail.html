@@ -1,0 +1,37 @@
+<section class="s-meth s-fm">
+  <div class="slide-head">
+    <div class="kicker">Looking for the why · 2 Probing · The detail</div>
+  </div>
+  <div class="slide-body">
+    <p class="mt-statement">A probe is a simple classifier trained on frozen activations.</p>
+
+    <div class="fm-grid">
+      <div class="fm-intu">
+        <div class="lbl">The intuition</div>
+        <p>The model is not trained again. We read its activations at one layer and ask whether a simple classifier can recover a property from them.</p>
+        <p class="sym"><span class="tex">h^{(\ell)}</span>: activation of one token at layer <span class="tex">\ell</span>, a vector of <span class="tex">d</span> numbers. <span class="tex">y</span>: the label of the property, for example the decision of the story. Only <span class="tex">W</span> and <span class="tex">b</span> are learned.</p>
+      </div>
+
+      <div class="fm-cards">
+        <div class="fm-card fragment" data-fragment-index="0">
+          <p class="h">Linear probe</p>
+          <div class="tex block">\hat{y} = \operatorname{softmax}\!\left(W\,h^{(\ell)} + b\right),\qquad \mathcal{L} = -\sum_n \log \hat{y}_{n,y_n} + \lambda\lVert W\rVert^2</div>
+          <p class="d">Cross-entropy on training texts, accuracy on unseen texts. The split is by story, never by token, so that no story is both in training and in test.</p>
+        </div>
+        <div class="fm-card fragment" data-fragment-index="1">
+          <p class="h">One probe per layer and position</p>
+          <div class="tex block">\mathrm{acc}(\ell, t) = \text{accuracy of the probe on } h^{(\ell)}_t</div>
+          <p class="d">The curve over layers <span class="tex">\ell</span> and over the position <span class="tex">t</span> in the text tells where the property becomes readable.</p>
+        </div>
+        <div class="fm-card fragment" data-fragment-index="2">
+          <p class="h">Controls</p>
+          <div class="tex block">\mathrm{selectivity} = \mathrm{acc}_{\text{task}} - \mathrm{acc}_{\text{control}}</div>
+          <p class="d">The control task has random labels per word type: a probe that learns it is memorising, not reading. Also compare with the same classifier on the visible text, such as word counts.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-limit fragment" data-fragment-index="3"><b>Capacity matters</b> a richer probe can learn the task by itself, and the weights <span class="tex">W</span> need not be the direction the model uses. Hence the next step: intervene.</div>
+  </div>
+  <p class="foot">Linear probes: Alain &amp; Bengio (2016); control tasks and selectivity: Hewitt &amp; Liang (2019), “Designing and interpreting probes with control tasks”.</p>
+</section>

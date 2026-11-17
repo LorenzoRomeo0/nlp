@@ -1,0 +1,41 @@
+<section class="s-lit rowfig">
+  <div class="slide-head">
+    <div class="kicker">Homogenisation · Padmakumar &amp; He (2024)</div>
+  </div>
+  <div class="slide-body">
+
+    <p class="lit-statement">Writing with a tuned model makes essays more alike.</p>
+
+    <ul class="lit-points">
+      <li class="fragment" data-fragment-index="0">
+        <div class="s">The test</div>
+        <div class="d">38 writers produced 300 argumentative essays on 10 topics: alone, with the base GPT-3, or with InstructGPT, tuned with human feedback.</div>
+      </li>
+      <li class="fragment" data-fragment-index="1">
+        <div class="s">The finding</div>
+        <div class="d">With InstructGPT, essays are less diverse in wording and in content. With the base model the difference is not significant.</div>
+      </li>
+      <li class="fragment" data-fragment-index="2">
+        <div class="s">Whose words</div>
+        <div class="d">The loss comes from the model’s contributions; the parts written by people keep their diversity.</div>
+      </li>
+      <li class="fragment" data-fragment-index="3">
+        <div class="s">The reading</div>
+        <div class="d">Alignment with human feedback may favour homogenisation, as a side effect of making answers better.</div>
+      </li>
+    </ul>
+
+    <div class="lit-row2">
+      <figure class="lit-fig fragment" data-fragment-index="1">
+        <img src="figures/padmakumar.png" alt="Table 3 of Padmakumar and He (2024): fraction of unique n-grams and unique key points for solo, GPT-3 and InstructGPT">
+      </figure>
+
+      <div class="lit-stat-col">
+        <div class="stat fragment" data-fragment-index="1"><div class="v">0.154 → 0.166</div><div class="l">similarity between essays (ROUGE-L), writing alone versus with InstructGPT; with GPT-3, 0.158 (not significant)</div></div>
+        <div class="stat fragment" data-fragment-index="2"><div class="v">0.20 vs 0.11</div><div class="l">similarity among the model’s suggestions: InstructGPT versus GPT-3</div></div>
+        <p class="lit-limit fragment" data-fragment-index="4"><b>Limits:</b> short argumentative essays, 2023 models, single sessions; no long-term effects, no other genres.</p>
+      </div>
+    </div>
+  </div>
+  <p class="foot">Padmakumar, V. &amp; He, H. (2024). <i>Does Writing with Language Models Reduce Content Diversity?</i> ICLR 2024. arxiv.org/abs/2309.05196</p>
+</section>

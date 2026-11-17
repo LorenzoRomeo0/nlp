@@ -1,0 +1,33 @@
+<section class="s-meth">
+  <div class="slide-head">
+    <div class="kicker">Looking for the why · 1 Attribution</div>
+  </div>
+  <div class="slide-body">
+    <p class="mt-statement">Attribution asks what the output depends on.</p>
+
+    <div class="mt-grid">
+      <div class="mt-left">
+        <div class="lbl">The question</div>
+        <div class="mt-flow">
+          <div class="mt-box"><div class="t">The input (our story)</div><div class="chips"><span>Ahmed</span><span>saw</span><span>Hassan’s partner</span><span>with a stranger</span><span>…</span><span>decided to</span></div></div>
+          <div class="mt-arrow">→</div>
+          <div class="mt-box mt-model"><div class="t">The model</div></div>
+          <div class="mt-arrow">→</div>
+          <div class="mt-box"><div class="t">The output</div><div class="out">next word: <b>keep</b> 34% · <b>let</b> 34% · <b>remain</b> 8% · …</div></div>
+        </div>
+        <p class="mt-q">Which words of the input pushed this output up, and which pushed it down?</p>
+      </div>
+
+      <div class="mt-right">
+        <div class="lbl">Three ways to answer</div>
+        <ol class="mt-ways">
+          <li class="fragment" data-fragment-index="0"><span class="n">1</span><span class="s">Occlusion</span><span class="d">Remove a word or a sentence and see how the output changes. Simple and robust; but removing text also changes everything around it.</span></li>
+          <li class="fragment" data-fragment-index="1"><span class="n">2</span><span class="s">Gradients</span><span class="d">Ask how sensitive the output is to a tiny change in each word. Fast, but local and noisy.</span></li>
+          <li class="fragment" data-fragment-index="2"><span class="n">3</span><span class="s">Integrated gradients</span><span class="d">Do it along a path from an empty text to the real one, so that the contributions add up to the total change. More principled, but it needs a baseline.</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="mt-limit fragment" data-fragment-index="3"><b>What it shows</b> how this output depends on this text. <b>What it does not show</b> why the model “chooses”: dependence is not a reason.</div>
+  </div>
+</section>

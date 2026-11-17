@@ -1,0 +1,37 @@
+<section class="s-meth s-fm">
+  <div class="slide-head">
+    <div class="kicker">Looking for the why · 1 Attribution · The detail</div>
+  </div>
+  <div class="slide-body">
+    <p class="mt-statement">Attribution gives each input token a score for one output.</p>
+
+    <div class="fm-grid">
+      <div class="fm-intu">
+        <div class="lbl">The intuition</div>
+        <p>Fix the quantity to explain: the logit of one next token, say “keep”. Then ask how much each input token contributed to it.</p>
+        <p class="sym"><span class="tex">F(x)</span>: the output we explain. <span class="tex">x_i</span>: the embedding of input token <span class="tex">i</span>. <span class="tex">x'</span>: a baseline input, for example padding. <span class="tex">a_i</span>: the score of token <span class="tex">i</span>, a sum over the embedding dimensions.</p>
+      </div>
+
+      <div class="fm-cards">
+        <div class="fm-card fragment" data-fragment-index="0">
+          <p class="h">Occlusion</p>
+          <div class="tex block">a_i = F(x) - F(x_{\setminus i})</div>
+          <p class="d">Remove token <span class="tex">i</span> and take the difference. Needs one forward pass per token; the model sees a text it has never read.</p>
+        </div>
+        <div class="fm-card fragment" data-fragment-index="1">
+          <p class="h">Gradient × input</p>
+          <div class="tex block">a_i = x_i \cdot \dfrac{\partial F}{\partial x_i}</div>
+          <p class="d">First-order estimate of what happens if <span class="tex">x_i</span> is switched off. One backward pass, but it is local: it can saturate and it is noisy.</p>
+        </div>
+        <div class="fm-card fragment" data-fragment-index="2">
+          <p class="h">Integrated gradients</p>
+          <div class="tex block">a_i = (x_i - x'_i)\cdot\dfrac{1}{m}\sum_{k=1}^{m}\dfrac{\partial F\!\left(x' + \tfrac{k}{m}(x-x')\right)}{\partial x_i}</div>
+          <p class="d">Average the gradient along the straight path from baseline to input. <i>Completeness:</i> <span class="tex">\sum_i a_i \approx F(x) - F(x')</span>, so the scores add up to the change in the output.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-limit fragment" data-fragment-index="3"><b>Check before trusting</b> the scores depend on the baseline and on the choice of <span class="tex">F</span> (logit or probability). A deletion test helps: remove the top-scored tokens and see whether the output really drops.</div>
+  </div>
+  <p class="foot">Integrated gradients: Sundararajan, Taly &amp; Yan (2017), “Axiomatic attribution for deep networks”.</p>
+</section>
