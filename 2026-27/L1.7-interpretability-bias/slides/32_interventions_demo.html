@@ -1,0 +1,27 @@
+<section class="s-st">
+  <div class="slide-head">
+    <div class="kicker">Looking for the why · Interventions at work</div>
+  </div>
+  <div class="slide-body">
+    <p class="st-statement">One knob moves the decision, and much else.</p>
+    <div class="st-ctrl">
+      <div class="st-row"><span class="st-l">Push along</span><span id="st-dirs"></span></div>
+      <div class="st-row"><span class="st-l">Prompt</span><span id="st-prompts"></span></div>
+      <div class="st-row"><span class="st-l">Strength <i class="al">α</i></span><span id="st-alphas"></span><span class="st-hint">negative: towards silence · positive: towards telling</span></div>
+    </div>
+    <div class="st-grid">
+      <div class="st-left">
+        <div class="st-col"><div class="lbl">What the story decides</div><div id="st-decision"></div><p class="st-ctl fragment" data-fragment-index="0"><b>The controls.</b> Gap in “tells minus stays silent” between α = +4 and −4, out of 200: decision direction 191, gender direction 45, random direction 26. The gender direction also sets who the protagonist is.</p></div>
+        <div class="st-col"><div class="lbl">Who the protagonist is</div><div id="st-gender"></div><div class="lbl st-l2">How the text holds</div><div id="st-text"></div></div>
+        <div class="st-col"><div class="lbl">Main reason given</div><div id="st-themes"></div></div>
+      </div>
+      <div class="st-right">
+        <div class="lbl">A story written with this setting <button type="button" id="st-next">another story</button></div>
+        <p id="st-story" class="st-story"></p>
+        <p id="st-warn" class="st-warn"></p>
+      </div>
+    </div>
+    <div class="st-nline" id="st-nline"></div>
+  </div>
+  <p class="foot">Qwen2.5-32B-Instruct, direction added at layer 36 at every word the model reads and writes; α in standard deviations of the projection. Each setting: about 100 stories, judged blind to the country by Claude Haiku 5.5; failures counted. The tick marks the value with no intervention. Random and gender directions are controls.</p>
+</section>

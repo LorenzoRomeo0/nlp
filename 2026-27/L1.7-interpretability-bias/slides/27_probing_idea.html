@@ -1,0 +1,32 @@
+<section class="s-meth">
+  <div class="slide-head">
+    <div class="kicker">Looking for the why · 2 Probing</div>
+  </div>
+  <div class="slide-body">
+    <p class="mt-statement">Probing asks what the model represents, and where.</p>
+
+    <div class="mt-grid">
+      <div class="mt-left">
+        <div class="lbl">The question</div>
+        <div class="mt-flow col">
+          <div class="mt-box"><div class="t">Inside the model</div>
+            <div class="layers"><i>layer 64</i><i>…</i><i class="hot">layer k: 5,120 numbers at one word</i><i>…</i><i>layer 1</i></div></div>
+          <div class="mt-arrow v">↓</div>
+          <div class="mt-box"><div class="t">A simple classifier</div><div class="out">reads one property from those numbers: <b>what the story will decide</b>?</div></div>
+        </div>
+        <p class="mt-q">Is the property in there, and from which layer on?</p>
+      </div>
+
+      <div class="mt-right">
+        <div class="lbl">How it works</div>
+        <ol class="mt-ways">
+          <li class="fragment" data-fragment-index="0"><span class="n">1</span><span class="s">Pick a property we can label</span><span class="d">For example, the decision each story ends up making.</span></li>
+          <li class="fragment" data-fragment-index="1"><span class="n">2</span><span class="s">Record the model’s internal activations</span><span class="d">At one layer and one point of the text, for thousands of texts.</span></li>
+          <li class="fragment" data-fragment-index="2"><span class="n">3</span><span class="s">Train a classifier on them, test it on unseen texts</span><span class="d">If it reads the property well, the information is present at that layer. Controls: the same classifier on the visible text, and on a property that should not be there.</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="mt-limit fragment" data-fragment-index="3"><b>What it shows</b> that information is present and where. <b>What it does not show</b> that the model uses it: decodable is not the same as used.</div>
+  </div>
+</section>

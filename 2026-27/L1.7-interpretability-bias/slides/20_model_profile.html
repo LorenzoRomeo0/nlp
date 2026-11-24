@@ -1,0 +1,37 @@
+<section class="s-mp">
+  <div class="slide-head">
+    <div class="kicker">Our tests · Results · The model’s profile</div>
+  </div>
+  <div class="slide-body">
+    <p class="mp-statement">A possible moral profile of the model.</p>
+    <div class="mp-layout">
+
+      <div class="mp-links">
+        <div class="mp-lbl">Explore the data</div>
+        <a class="mp-link" href="reports/report_final.html" target="_blank" rel="noopener">
+          <span class="t">The full report</span>
+          <span class="d">Distributions, maps, sensitivity to the country, reasons, markers, stories by pattern.</span>
+          <span class="o">Opens in a new tab ↗</span>
+        </a>
+        <a class="mp-link" href="reports/report_profiles.html" target="_blank" rel="noopener">
+          <span class="t">National profiles</span>
+          <span class="d">What is specific to each country; search by value or by marker.</span>
+          <span class="o">Opens in a new tab ↗</span>
+        </a>
+        <div class="mp-lbl mp-rl">Regions included <span class="mp-all"><button type="button" data-act="all">all</button> · <button type="button" data-act="none">none</button></span></div>
+        <div id="mp-regions"></div>
+      </div>
+
+      <div class="mp-main">
+        <div class="mp-cols">
+          <div class="mp-col"><div class="mp-lbl">The decision</div><div id="mp-decision"></div></div>
+          <div class="mp-col"><div class="mp-lbl">The outcome</div><div class="mp-sub">The scene</div><div id="mp-scene"></div><div class="mp-sub">The friendship</div><div id="mp-ending"></div></div>
+          <div class="mp-col"><div class="mp-lbl">The reasons</div><div id="mp-theme"></div></div>
+        </div>
+        <div class="mp-nline" id="mp-nline"></div>
+        <p class="mp-care fragment" data-fragment-index="0"><b>Read with care.</b> One model, one dilemma, one language-model judge; the reasons are produced because the prompt asks for them. The country moves little of this. It is a hypothesis about a profile of the model, not a measurement of its morality.</p>
+      </div>
+    </div>
+  </div>
+  <p class="foot">Valid stories (4,489; 55 countries in nine regions plus the control), Qwen2.5-32B-Instruct; judge Claude Haiku 5.5, blind to the country. Shares of stories; reasons: main reason of each story (4,484). Same 0–100% scale in all columns; the tick marks the value with all regions included.</p>
+</section>

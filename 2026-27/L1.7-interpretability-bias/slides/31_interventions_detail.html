@@ -1,0 +1,37 @@
+<section class="s-meth s-fm">
+  <div class="slide-head">
+    <div class="kicker">Looking for the why · 3 Interventions · The detail</div>
+  </div>
+  <div class="slide-body">
+    <p class="mt-statement">Interventions edit an activation and measure the effect.</p>
+
+    <div class="fm-grid">
+      <div class="fm-intu">
+        <div class="lbl">The intuition</div>
+        <p>Observing is not enough to show a cause. We change one internal quantity, leave the rest of the computation alone, and look at the output.</p>
+        <p class="sym"><span class="tex">h^{(\ell)}_t</span>: activation at layer <span class="tex">\ell</span>, position <span class="tex">t</span>. <span class="tex">F</span>: the output measured, for example the logit difference between “tells” and “stays silent”. <i>clean</i>: the original input; <i>corrupted</i>: a minimally changed one.</p>
+      </div>
+
+      <div class="fm-cards">
+        <div class="fm-card fragment" data-fragment-index="0">
+          <p class="h">Ablation</p>
+          <div class="tex block">h^{(\ell)}_t \leftarrow 0 \quad\text{or}\quad h^{(\ell)}_t \leftarrow \bar{h}^{(\ell)}_t,\qquad \Delta = F_{\text{clean}} - F_{\text{ablated}}</div>
+          <p class="d">Zero or mean ablation of a component. If <span class="tex">\Delta</span> is large the component is necessary; the rest of the model may compensate.</p>
+        </div>
+        <div class="fm-card fragment" data-fragment-index="1">
+          <p class="h">Activation patching</p>
+          <div class="tex block">\mathrm{recovery} = \dfrac{F_{\text{patched}} - F_{\text{corrupted}}}{F_{\text{clean}} - F_{\text{corrupted}}}</div>
+          <p class="d">Run the corrupted input, but copy <span class="tex">h^{(\ell)}_t</span> from the clean run. Sweeping layers and positions maps where the information that matters is carried. 1 means fully recovered, 0 nothing.</p>
+        </div>
+        <div class="fm-card fragment" data-fragment-index="2">
+          <p class="h">Steering</p>
+          <div class="tex block">v = \dfrac{1}{|A|}\sum_{a\in A} h^{(\ell)}_a - \dfrac{1}{|B|}\sum_{b\in B} h^{(\ell)}_b,\qquad h^{(\ell)}_t \leftarrow h^{(\ell)}_t + \alpha\, v</div>
+          <p class="d"><span class="tex">A</span> and <span class="tex">B</span>: texts with and without the property (tells / stays silent). Sweep <span class="tex">\alpha</span> in both senses. Controls: a random vector with the same norm, and a direction for an unrelated property.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-limit fragment" data-fragment-index="3"><b>Causal, but limited</b> an effect shows that a place is involved, not that it is the only one; and a push can move many things at once, as our own steering showed.</div>
+  </div>
+  <p class="foot">Causal tracing by patching: Meng, Bau, Andonian &amp; Belinkov (2022); steering with difference of means: Turner et al. (2023), Rimsky et al. (2024).</p>
+</section>

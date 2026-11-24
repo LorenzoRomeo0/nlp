@@ -1,0 +1,40 @@
+<section class="s-meth s-fm">
+  <div class="slide-head">
+    <div class="kicker">Looking for the why · 5 Circuits and features</div>
+  </div>
+  <div class="slide-body">
+    <p class="mt-statement">From a direction to the components and features behind it.</p>
+
+    <div class="fm-two">
+      <div>
+        <div class="lbl">Circuits: which components</div>
+        <div class="fm-card fm-wide fragment" data-fragment-index="0">
+          <p class="h">The idea</p>
+          <p class="d">Heads and MLPs are the nodes, the residual stream carries the edges. A circuit is the small subgraph that explains a behaviour: patch each node and each path, keep what matters.</p>
+        </div>
+        <div class="fm-card fm-wide fragment" data-fragment-index="1">
+          <p class="h">A known example: induction</p>
+          <div class="tex block">[A][B]\ \dots\ [A] \;\Rightarrow\; [B]</div>
+          <p class="d">A previous-token head writes “what came before” into the stream; an induction head reads it, finds the earlier <span class="tex">[A]</span> and copies the token that followed. It is how a model repeats a pattern in context.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="lbl">Features: which units</div>
+        <div class="fm-card fm-wide fragment" data-fragment-index="2">
+          <p class="h">The problem: superposition</p>
+          <p class="d">A layer has <span class="tex">d</span> dimensions but the model seems to use many more features than that, stored as overlapping directions. Single neurons are then hard to read.</p>
+        </div>
+        <div class="fm-card fm-wide fragment" data-fragment-index="3">
+          <p class="h">Sparse autoencoder</p>
+          <div class="tex block">f = \mathrm{ReLU}\big(W_e(h-b_d)+b_e\big),\quad \hat{h} = W_d f + b_d</div>
+          <div class="tex block">\mathcal{L} = \lVert h-\hat{h}\rVert_2^2 + \lambda\lVert f\rVert_1</div>
+          <p class="d">Rebuild the activation from many features, few of them active at once. Each column of <span class="tex">W_d</span> is a candidate feature direction.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-limit fragment" data-fragment-index="4"><b>Open research</b> a good reconstruction is not an explanation. A feature is believed only when interventions on it change the behaviour as its description predicts.</div>
+  </div>
+  <p class="foot">Circuits: Elhage et al. (2021); induction heads: Olsson et al. (2022); sparse autoencoders: Bricken et al. (2023), “Towards monosemanticity”.</p>
+</section>

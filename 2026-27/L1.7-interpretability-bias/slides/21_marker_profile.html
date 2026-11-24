@@ -1,0 +1,32 @@
+<section class="s-mp">
+  <div class="slide-head">
+    <div class="kicker">Our tests · Results · The model’s cultural profile</div>
+  </div>
+  <div class="slide-body">
+    <p class="mp-statement">A possible cultural profile of the model.</p>
+    <div class="mp-layout">
+
+      <div class="mp-links">
+        <div class="mp-lbl">Explore the data</div>
+        <a class="mp-link" href="reports/report_profiles.html#t=markers" target="_blank" rel="noopener">
+          <span class="t">Markers by country</span>
+          <span class="d">Which places, foods, practices and names are specific to each country; search by marker.</span>
+          <span class="o">Opens in a new tab ↗</span>
+        </a>
+        <div class="mp-lbl mp-rl">Regions included <span class="mp-all"><button type="button" data-act="all">all</button> · <button type="button" data-act="none">none</button></span></div>
+        <div id="mk-regions"></div>
+      </div>
+
+      <div class="mp-main">
+        <div class="mp-cols">
+          <div class="mp-col"><div class="mp-lbl">What appears</div><div class="mp-sub">Stories with at least one…</div><div id="mk-content"></div></div>
+          <div class="mp-col"><div class="mp-lbl">How deep it goes</div><div class="mp-sub">Cultural specificity</div><div id="mk-spec"></div><div class="mp-sub">Role of the local detail</div><div id="mk-detail"></div></div>
+          <div class="mp-col"><div class="mp-lbl">Religion and issues</div><div class="mp-sub">Role of religion</div><div id="mk-religion"></div><div class="mp-sub">Judge’s flag</div><div id="mk-issues"></div></div>
+        </div>
+        <div class="mp-nline" id="mk-nline"></div>
+        <p class="mp-care fragment" data-fragment-index="0"><b>Read with care.</b> One model, one prompt, one language-model judge: the categories and “decorative” versus “structural” are its reading of each story. Leaving out any single region moves these figures by at most 2.3 points; leaving out the control, which names no country, by 4.3.</p>
+      </div>
+    </div>
+  </div>
+  <p class="foot">Valid stories (4,489; 55 countries in nine regions plus the control), Qwen2.5-32B-Instruct; judge Claude Haiku 5.5, aware of the country. Shares of stories; names and places excluded from the categories. Same 0–100% scale in all columns; the tick marks the value with all regions included.</p>
+</section>

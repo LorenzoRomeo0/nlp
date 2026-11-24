@@ -6,6 +6,11 @@
 
 ###### Università degli Studi di Milano
 
+---
+#### AI use
+
+The notebooks and the code in this folder were prepared by the instructor with the assistance of Anthropic's Claude (used through Claude Code). The assistant helped to write the notebooks and the shared code (`nlp/`), to run the experiments and to draft the explanatory text; the choice of the topics, the structure of each notebook and the review of the results are the instructor's. All the numbers shown in the notebooks come from running the code they contain.
+
 ## Part 0 — Course Introduction
 
 This opening lesson sets the stage before any technical content: what this course is about, why natural language is a hard object to compute with, what students will be able to build and understand by the end, and how the project and assessment work. It also previews the narrative arc of the course, from raw text to tokens, from tokens to numbers, from numbers to meaning, and finally to modern large language models
@@ -46,9 +51,9 @@ We can reuse the classification machinery in a creative way: instead of predicti
 
 **Lessons:**
 
-8. **Classification in disguise: predicting the next word**
-9. **Statistical language models: Markov LMs**
-10. **Where Markov breaks down: the need to approximate language with neural methods**
+8. **Classification in disguise: predicting the next word** [Notebook](./L0.6-classification-in-disguise.ipynb)
+9. **Statistical language models: Markov LMs** [Notebook](./L0.7-statistical-language-models.ipynb)
+10. **Where Markov breaks down: the need to approximate language with neural methods** [Notebook](./L0.8-neural-language-models.ipynb)
 
 ---
 
@@ -58,11 +63,11 @@ Treating text as a sequence and processing it step by step (RNNs) seems like the
 
 **Lessons:**
 
-11. **Text as sequence: why naive sequential processing is hard (RNNs)**
-12. **Rethinking the input: token + positional embeddings for whole-sequence processing**
-13. **A Transformer without attention: what's still missing?**
-14. **The attention mechanism and the residual stream**
-15. **Assembling the Transformer: encoder-decoder architecture**
+11. **Text as sequence: why naive sequential processing is hard (RNNs)** [Notebook](./L0.9-sequences-and-positions.ipynb)
+12. **Rethinking the input: token + positional embeddings for whole-sequence processing** [Notebook](./L0.9-sequences-and-positions.ipynb)
+13. **A Transformer without attention: what's still missing?** [Notebook](./L1.0-attention.ipynb)
+14. **The attention mechanism and the residual stream** [Notebook L1.0](./L1.0-attention.ipynb) [Notebook L1.1](./L1.1-residual-stream-and-block.ipynb)
+15. **Assembling the Transformer: encoder-decoder architecture** [Notebook](./L1.2-encoder-and-decoder.ipynb)
 
 ---
 
@@ -72,8 +77,8 @@ With the Transformer building block in hand, we can look at the two architectura
 
 **Lessons:**
 
-16. **BERT: architecture and pretraining objectives**
-17. **GPT: architecture and autoregressive pretraining**
+16. **BERT: architecture and pretraining objectives** [Notebook](./L1.3-bert.ipynb)
+17. **GPT: architecture and autoregressive pretraining** [Notebook](./L1.4-gpt.ipynb)
 
 ---
 
@@ -83,10 +88,8 @@ A pretrained language model on its own is not yet a useful assistant or tool. Th
 
 **Lessons:**
 
-18. **From pretraining to a usable model: fine-tuning & parameter-efficient fine-tuning (LoRA)**
-19. **Prompt engineering, instruction tuning & RLHF (brief mention of RAG)**
-20. **Agents and proprietary model APIs**
-21. **Multimodal models: extending beyond text**
+18. **From pretraining to a usable model: fine-tuning & parameter-efficient fine-tuning (LoRA)** [Notebook](./L1.5-lora.ipynb)
+19. **Prompt engineering, instruction tuning & RLHF (brief mention of RAG)** [Notebook](./L1.6-instruction-tuning-rlhf-dpo.ipynb)
 
 ---
 
@@ -96,9 +99,9 @@ No model is neutral or fully transparent, and no course is complete without conf
 
 **Lessons:**
 
-22. **Interpretability: XAI & mechanistic interpretability**
-23. **Bias & stereotypes: cultural and statistical bias in language models**
-24. **Frameworks for deployment (llama.cpp, vLLM, MLX LM) & project kickoff**
+20. **Interpretability: XAI & mechanistic interpretability**
+21. **Bias & stereotypes: cultural and statistical bias in language models**
+22. **Frameworks for deployment (llama.cpp, vLLM, MLX LM) & project kickoff**
 
 
 # Essential Bibliography
@@ -206,3 +209,6 @@ No model is neutral or fully transparent, and no course is complete without conf
 - Olah, C., Cammarata, N., Schubert, L., et al. (2020). *Zoom In: An Introduction to Circuits.* Distill.
   [https://distill.pub/2020/circuits/zoom-in/](https://distill.pub/2020/circuits/zoom-in/)
   — Foundational text for mechanistic interpretability.
+
+---
+
